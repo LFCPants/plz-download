@@ -11,8 +11,9 @@ jobs:
     - name: wget Install
       run: sudo apt install wget curl ca-certificates
     - name: Aria2 Install
-      run: wget -N git.io/aria2.sh && chmod +x aria2.sh
-           echo 1 | ./aria2.sh
+      run: |
+        wget -N git.io/aria2.sh && chmod +x aria2.sh
+        echo 1 | ./aria2.sh
     - name: Inject Rclone&Aria2 config
       run: |
         mkdir -p ~/.config/rclone/
