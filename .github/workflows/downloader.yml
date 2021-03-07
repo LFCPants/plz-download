@@ -22,7 +22,7 @@ jobs:
         EOF
     - name: View Space
       run: |
-        sudo rm -rf /opt/
+        sudo rm -rf /root/downloads
         df -h $GITHUB_WORKSPACE/download
     - name: Aria2_Downloading_File
       run: |
