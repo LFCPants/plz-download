@@ -20,6 +20,10 @@ jobs:
         cat >  ~/.config/rclone/rclone.conf  << EOF
         ${{ secrets.RCLONE_CONF }}
         EOF
+    - name: View Space
+      run: |
+        sudo rm -rf /opt/
+        df -h $GITHUB_WORKSPACE/download
     - name: Aria2_Downloading_File
       run: |
         git clone "https://github.com/${GITHUB_REPOSITORY}.wiki.git"
